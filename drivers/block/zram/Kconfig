@@ -15,6 +15,10 @@ config ZRAM
 
 	  See Documentation/blockdev/zram.txt for more information.
 
+config ZRAM_DEFAULT_COMP_ALGORITHM
+	string "Default ZRAM compression algorithm"
+	default "lzo"
+
 config ZRAM_DEDUP
 	bool "Deduplication support for ZRAM data"
 	depends on ZRAM
