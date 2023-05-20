@@ -1694,8 +1694,7 @@ static int wcnss_rpmsg_resource_init(void)
 	return 0;
 }
 
-static void wcnss_rpmsg_resource_deinit(void)
-schedule_delayed_work{
+static void wcnss_rpmsg_resource_deinit(void) {
 	destroy_workqueue(penv->event_wq);
 }
 
