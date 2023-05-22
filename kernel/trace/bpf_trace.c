@@ -100,8 +100,9 @@ BPF_CALL_3(bpf_probe_read_user, void *, dst, u32, size,
 	   const void __user *, unsafe_ptr)
 {
 	int ret = probe_user_read(dst, unsafe_ptr, size);
-	
-	memset(dst, 0, size);
+
+	if (unlikely(ret < 0))
+		memset(dst, 0, size);
 
 	return ret;
 }
